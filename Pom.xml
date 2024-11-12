@@ -61,9 +61,24 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <skipTests>false</skipTests> <!-- Set to false if you want to run tests -->
+                    <skipTests>false</skipTests> <!-- Set to true to skip tests -->
                 </configuration>
+            </plugin>
+
+            <!-- Maven Deploy Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>my-repo-id</id>
+            <name>My Repository</name>
+            <url>http://my.repository.com/maven2</url>
+        </repository>
+    </distributionManagement>
 </project>
